@@ -4,7 +4,7 @@ var background;
 function preload() {
   game.stage.backgroundColor = '#bbbbbb';
   game.load.image("background","assets/bg.png");
-  game.load.spritesheet("bird", "assets/bird.png",64,64);
+  game.load.spritesheet("bird", "assets/ayylmao.png",64,64);
 //  game.load.image("pipe," "assets/pipe.png");
 }
 function create() {
