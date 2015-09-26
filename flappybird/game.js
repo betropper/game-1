@@ -4,7 +4,7 @@ var background;
 function preload() {
   game.stage.backgroundColor = '#bbbbbb';
   game.load.image("background","assets/bg.png");
-  game.load.image("bird", "assets/bird.png");
+  game.load.spritesheet("bird", "assets/bird.png",64,64);
 //  game.load.image("pipe," "assets/pipe.png");
 }
 function create() {
@@ -12,6 +12,9 @@ function create() {
   background = game.add.tileSprite(0,0,320,568,"background");
   background.autoScroll(-100,0);
   bird = game.add.sprite(100, 245, 'bird');
+  bird.smoothed = false;
+  bird.animations.add('fly', [0,1,2,3], 10, true);
+  bird.play('fly')
   game.physics.arcade.enable(bird);
   bird.body.gravity.y = 1000;
 //  pipes = game.add.group(); // Create a group  
