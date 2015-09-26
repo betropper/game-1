@@ -11,9 +11,9 @@ function create() {
   game.physics.startSystem(Phaser.Physics.ARCADE);
   background = game.add.tileSprite(0,0,320,568,"background");
   background.autoScroll(-100,0);
+  bird = game.add.sprite(100, 245, 'bird');
   bird.anchor.x = 32
   bird.anchor.y = 32
-  bird = game.add.sprite(100, 245, 'bird');
   bird.smoothed = false;
   bird.scale.set(4)
   bird.animations.add('fly', [0,1,2,3], 10, true);
