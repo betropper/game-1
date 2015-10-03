@@ -12,26 +12,27 @@ function create() {
   background = game.add.tileSprite(0,0,320,568,"background");
   background.autoScroll(-100,0);
   bird = game.add.sprite(100, 245, 'bird');
-  bird.anchor.x = 32
-  bird.anchor.y = 32
+  bird.anchor.x = .5;
+  bird.anchor.y = .5;
   bird.smoothed = false;
-  bird.scale.set(4)
+  bird.scale.set(1);
   bird.animations.add('fly', [0,1,2,3], 10, true);
-  bird.play('fly')
+  bird.play('fly');
   game.physics.arcade.enable(bird);
   bird.body.gravity.y = 1000;
-//  pipes = game.add.group(); // Create a group  
-//  game.physics.arcade.enable(pipes);  // Add physics to the group  
-//  pipes.createMultiple(4, 'pipe'); // Create 20 pipes  
+  pipes = game.add.group(); // Create a group  
+  game.physics.arcade.enable(pipes);  // Add physics to the group  
+  pipes.createMultiple(4, 'pipe'); // Create 20 pipes  
   var spaceKey =
     game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     spaceKey.onDown.add(jump);
 }
 
 function update() {
-  if (bird.inWorld == false)
-    restart.game();
-
+  if (bird.inWorld == false) {
+    bird.x = 100
+    bird.y = 245
+  }
 }
 
 function jump() {
